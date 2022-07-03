@@ -1,12 +1,15 @@
 import "./table.css";
+import { Link } from "react-router-dom";
 
 type EmployeesList = {
   names: {
     id: string;
-    fname: string;
-    lname: string;
+    name: string;
+    role: string;
+    address: string;
     email: string;
-    salary: string;
+    phone: string;
+    employment_status: string;
   }[];
 };
 
@@ -17,10 +20,15 @@ export default function List(props: EmployeesList) {
         return (
           <tr key={name.id}>
             <td>{name.id}</td>
-            <td>{name.fname}</td>
-            <td>{name.lname}</td>
+            <td>{name.name}</td>
+            <td>{name.role}</td>
+            <td>{name.address}</td>
             <td>{name.email}</td>
-            <td>{name.salary}</td>
+            <td>{name.phone}</td>
+            <td style={{ textAlign: "center" }}>{name.employment_status}</td>
+            <td>
+              <Link to={"/detail"}>Update Status</Link>
+            </td>
           </tr>
         );
       })}
