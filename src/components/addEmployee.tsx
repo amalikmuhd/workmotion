@@ -1,31 +1,27 @@
-import "./signup.css";
-import logo from "./logo.png";
-import { Link } from "react-router-dom";
-
 import React, { useEffect, useState } from "react";
+import "./signup.css";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
-export default function Signup() {
+export default function AddEmployee() {
   const api = "https://62c0eed7eff7f7856f071380.mockapi.io/employee";
   const [name, setName] = useState("");
   const [role, setRole] = useState("");
   const [address, setAddress] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [employmentStatus, setEmploymentStatus] = useState("");
 
-  useEffect(() => {}, [name, role, address, email, phone, employmentStatus]);
+  useEffect(() => {}, [name, role, address, email, phone]);
 
   const handleForm = async (e: any) => {
     e.preventDefault();
-    // console.log(fname, lname, email);
     const body = {
       name: name,
       role: role,
       address: address,
       email: email,
       phone: phone,
-      employment_status: "added",
+      employment_status: "Added",
     };
     const config = {
       headers: {
@@ -38,8 +34,8 @@ export default function Signup() {
   return (
     <div className="container__signup">
       <header className="header__signup">
-        <img src={logo} />
-        <p className="header__title">Create an account</p>
+        {/* <img src={Logo} alt="logo" /> */}
+        <p className="header__title">Add a team</p>
         <p className="description">welcome to motion</p>
       </header>
       <form onSubmit={handleForm}>
@@ -52,6 +48,7 @@ export default function Signup() {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
+
         <div className="user__input">
           <label>Role</label>
           <input
@@ -88,8 +85,10 @@ export default function Signup() {
             onChange={(e) => setPhone(e.target.value)}
           />
         </div>
-        <Link to="/table">Show</Link>
-        <input type="submit" value="Submit" className="button__signup" />
+        <Link to="/" className="button__signup">
+          View Employees
+        </Link>
+        <input type="submit" value="Add Employee" className="button__signup" />
       </form>
     </div>
   );

@@ -2,20 +2,21 @@
     margin: 20px auto;
     display: flex;
     justify-content: center;
-    /* border: 1px solid orange; */
     max-width: 100%;
 }
 
 .tabMenu {
     width: 100px;
     padding: 20px;
-    /* background-color: purple; */
     color: black;
     text-align: center;
     text-decoration: none;
-    /* margin-right: 5px; */
 }
 
 .tabbackground {
     background-color: pink;
+}
+
+.tbackground {
+    background-color: purple;
 }

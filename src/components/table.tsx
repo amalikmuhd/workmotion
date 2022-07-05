@@ -4,14 +4,12 @@ import { useState, useEffect } from "react";
 
 import List from "./list";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Table() {
   const [mockData, setMockData] = useState([]);
   const [loading, setLoading] = useState(false);
-
   const api = "https://62c0eed7eff7f7856f071380.mockapi.io/employee";
-
-  // const apii = "https://jsonplaceholder.typicode.com/users";
 
   useEffect(() => {
     const fetchEmployee = async () => {
@@ -50,6 +48,13 @@ export default function Table() {
               <List names={mockData} />
             </tbody>
           </table>
+
+          <Link
+            to="/addEmployee"
+            style={{ marginTop: 50, textDecoration: "none" }}
+          >
+            Add Employee
+          </Link>
         </>
       ) : (
         <p>Loading Data</p>

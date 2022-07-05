@@ -16,18 +16,20 @@ type EmployeesList = {
 export default function List(props: EmployeesList) {
   return (
     <>
-      {props.names.map((name) => {
+      {props.names.map((employee) => {
         return (
-          <tr key={name.id}>
-            <td>{name.id}</td>
-            <td>{name.name}</td>
-            <td>{name.role}</td>
-            <td>{name.address}</td>
-            <td>{name.email}</td>
-            <td>{name.phone}</td>
-            <td style={{ textAlign: "center" }}>{name.employment_status}</td>
+          <tr key={employee.id}>
+            <td>{employee.id}</td>
+            <td>{employee.name}</td>
+            <td>{employee.role}</td>
+            <td>{employee.address}</td>
+            <td>{employee.email}</td>
+            <td>{employee.phone}</td>
+            <td style={{ textAlign: "center" }}>
+              {employee.employment_status}
+            </td>
             <td>
-              <Link to={"/detail"}>Update Status</Link>
+              <Link to={`/edit/${employee.id}`}>Edit</Link>
             </td>
           </tr>
         );
