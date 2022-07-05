@@ -8,43 +8,43 @@ export default function Details() {
     <>
       <div className="tabContainer">
         <NavLink
-          to="/"
+          to="#"
           // className="tabMenu"
 
-          className={({ isActive }) =>
-            isActive ? "tabMenu tabbackground" : "tabMenu tbackground"
-          }
+          // className={({ isActive }) =>
+          //   isActive ? "tabMenu tabbackground" : "tabMenu tbackground"
+          // }
+
+          className={({ isActive }) => (isActive ? "active" : "inactive")}
           //  activeClassName="active-menu-item"
           onClick={() => update("Added", `${params.id}`)}
         >
           Added
         </NavLink>
         <NavLink
-          to="/"
-          className={({ isActive }) =>
-            isActive ? "tabMenu tabbackground" : "tabMenu tbackground"
-          }
+          to=""
+          className={({ isActive }) => (isActive ? "active" : "inactive")}
           onClick={() => update("In-check", `${params.id}`)}
         >
           In-check
         </NavLink>
         <NavLink
-          to="/"
-          className="tabMenu"
+          to="/edit/1"
+          className={({ isActive }) => (isActive ? "active" : "inactive")}
           onClick={() => update("Approved", `${params.id}`)}
         >
           Approved
         </NavLink>
         <NavLink
           to="/"
-          className="tabMenu"
+          className={({ isActive }) => (isActive ? "active" : "inactive")}
           onClick={() => update("Active", `${params.id}`)}
         >
           Active
         </NavLink>
         <NavLink
           to="/"
-          className="tabMenu"
+          className={({ isActive }) => (isActive ? "active" : "inactive")}
           onClick={() => update("Inactive", `${params.id}`)}
         >
           Inactive

@@ -1,13 +1,27 @@
-/* * {
+* {
     margin: 0;
     padding: 0;
-} */
+}
 
 .container__signup {
     display: flex;
     flex-direction: column;
+    justify-content: stretch;
     justify-content: center;
-    margin-top: 50px;
+    height: 100vh;
+    /* margin-top: 50px; */
+}
+
+.inner__container {
+    /* display: flex;
+    flex-direction: column; */
+    /* justify-content: space-between; */
+    /* align-items: stretch; */
+    /* padding: 20px;
+    margin: 0 auto;*/
+    background-color: #fff;
+    box-shadow: 0px 1.00557px 3.01672px rgba(16, 24, 40, 0.1), 0px 1.00557px 2.01115px rgba(16, 24, 40, 0.06);
+    border-radius: 8.0446px; 
 }
 
 .header__signup {

@@ -27,38 +27,39 @@ export default function Table() {
 
   return (
     <div className="container">
-      {loading === true ? (
-        <>
-          <h1>List Of Employees</h1>
-          <table id="employee">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Role</th>
-                <th>Address</th>
-                <th>email</th>
-                <th>phone</th>
-                <th>employment_status</th>
-                <th></th>
-              </tr>
-            </thead>
+      <div className="inner__container">
+        {loading === true ? (
+          <>
+            <div className="header">
+              <h1>Workmotion Employees</h1>
+              <Link to="/addEmployee" className="add__button">
+                Add Employee
+              </Link>
+            </div>
 
-            <tbody>
-              <List names={mockData} />
-            </tbody>
-          </table>
+            <table id="employee">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Role</th>
+                  <th>Address</th>
+                  <th>email</th>
+                  <th>phone</th>
+                  <th>employment_status</th>
+                  <th></th>
+                </tr>
+              </thead>
 
-          <Link
-            to="/addEmployee"
-            style={{ marginTop: 50, textDecoration: "none" }}
-          >
-            Add Employee
-          </Link>
-        </>
-      ) : (
-        <p>Loading Data</p>
-      )}
+              <tbody>
+                <List names={mockData} />
+              </tbody>
+            </table>
+          </>
+        ) : (
+          <p>Loading Data</p>
+        )}
+      </div>
     </div>
   );
 }

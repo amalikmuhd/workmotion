@@ -33,63 +33,69 @@ export default function AddEmployee() {
 
   return (
     <div className="container__signup">
-      <header className="header__signup">
-        {/* <img src={Logo} alt="logo" /> */}
-        <p className="header__title">Add a team</p>
-        <p className="description">welcome to motion</p>
-      </header>
-      <form onSubmit={handleForm}>
-        <div className="user__input">
-          <label>Name</label>
-          <input
-            type="text"
-            placeholder="Enter name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
+      <div className="inner__container">
+        <header className="header__signup">
+          {/* <img src={Logo} alt="logo" /> */}
+          <p className="header__title">Add a team</p>
+          <p className="description">welcome to motion</p>
+        </header>
+        <form onSubmit={handleForm}>
+          <div className="user__input">
+            <label>Name</label>
+            <input
+              type="text"
+              placeholder="Enter name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
 
-        <div className="user__input">
-          <label>Role</label>
+          <div className="user__input">
+            <label>Role</label>
+            <input
+              type="text"
+              placeholder="Enter Role"
+              value={role}
+              onChange={(e) => setRole(e.target.value)}
+            />
+          </div>
+          <div className="user__input">
+            <label>Address</label>
+            <input
+              type="text"
+              placeholder="Enter Address"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+            />
+          </div>
+          <div className="user__input">
+            <label>Email</label>
+            <input
+              type="text"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="user__input">
+            <label>Phone</label>
+            <input
+              type="text"
+              placeholder="Enter your email"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+          </div>
+          <Link to="/" className="button__signup">
+            View Employees
+          </Link>
           <input
-            type="text"
-            placeholder="Enter Role"
-            value={role}
-            onChange={(e) => setRole(e.target.value)}
+            type="submit"
+            value="Add Employee"
+            className="button__signup"
           />
-        </div>
-        <div className="user__input">
-          <label>Address</label>
-          <input
-            type="text"
-            placeholder="Enter Address"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-          />
-        </div>
-        <div className="user__input">
-          <label>Email</label>
-          <input
-            type="text"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="user__input">
-          <label>Phone</label>
-          <input
-            type="text"
-            placeholder="Enter your email"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
-        </div>
-        <Link to="/" className="button__signup">
-          View Employees
-        </Link>
-        <input type="submit" value="Add Employee" className="button__signup" />
-      </form>
+        </form>
+      </div>
     </div>
   );
 }

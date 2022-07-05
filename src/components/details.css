@@ -13,10 +13,20 @@
     text-decoration: none;
 }
 
-.tabbackground {
+.active {
+    width: 100px;
+    padding: 20px;
+    color: purple;
+    text-align: center;
+    text-decoration: none;
     background-color: pink;
 }
 
-.tbackground {
-    background-color: purple;
+.inactive {
+    width: 100px;
+    padding: 20px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    background-color: white;
 }
