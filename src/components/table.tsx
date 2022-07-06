@@ -23,7 +23,7 @@ export default function Table() {
     };
 
     fetchEmployee();
-  }, []);
+  });
 
   return (
     <div className="container">
@@ -50,7 +50,7 @@ export default function Table() {
                   <th>ADDRESS</th>
                   <th>EMAIL</th>
                   <th>PHONE</th>
-                  <th>EMPLOYEE STATUS</th>
+                  <th>STATUS</th>
                   <th></th>
                 </tr>
               </thead>

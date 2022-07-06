@@ -1,5 +1,5 @@
 import "./table.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 type EmployeesList = {
   names: {
@@ -14,14 +14,6 @@ type EmployeesList = {
 };
 
 export default function List(props: EmployeesList) {
-  // let navigate = useNavigate();
-  // const handleSelect = (status: string) => {
-  //   navigate("/edit/:id", {
-  //     state: {
-  //       statusData: status,
-  //     },
-  //   });
-  // };
   return (
     <>
       {props.names.map((employee) => {
@@ -36,22 +28,13 @@ export default function List(props: EmployeesList) {
             <td className="employee__status">{employee.employment_status}</td>
 
             <td>
-              {/* <Link
-                to={`/edit`}
+              <Link
+                to={`/edit/${employee.id}/${employee.employment_status}`}
                 className="add__button"
                 style={{ backgroundColor: "#7F56D9", border: "none" }}
                 state={{
                   status: employee.employment_status,
-                  userId: employee.id,
                 }}
-              >
-                Edit
-              </Link> */}
-              <Link
-                to={`/edit/${employee.id}`}
-                className="add__button"
-                style={{ backgroundColor: "#7F56D9", border: "none" }}
-                state={{ status: employee.employment_status }}
               >
                 Edit
               </Link>

@@ -8,7 +8,6 @@
 .tabMenu {
     width: 100px;
     padding: 20px;
-    color: black;
     text-align: center;
     text-decoration: none;
 }
@@ -19,11 +18,8 @@
     color: black;
     text-align: center;
     text-decoration: none;
-    background-color: white;
-}
-.active:hover {
-    color: white;
-    background-color: purple;
+    background-color: orange;
+    cursor: pointer;
 }
 
 .inactive {
@@ -33,6 +29,11 @@
     text-align: center;
     text-decoration: none;
     background-color: white;
+    cursor: pointer;
+}
+
+.active:hover, .inactive:hover {
+    background-color: pink;
 }
 
 .user__display {
