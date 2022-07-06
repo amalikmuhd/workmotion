@@ -1,5 +1,5 @@
 import "./table.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 type EmployeesList = {
   names: {
@@ -14,22 +14,47 @@ type EmployeesList = {
 };
 
 export default function List(props: EmployeesList) {
+  // let navigate = useNavigate();
+  // const handleSelect = (status: string) => {
+  //   navigate("/edit/:id", {
+  //     state: {
+  //       statusData: status,
+  //     },
+  //   });
+  // };
   return (
     <>
       {props.names.map((employee) => {
         return (
-          <tr key={employee.id}>
+          <tr className="list" key={employee.id}>
             <td>{employee.id}</td>
             <td>{employee.name}</td>
             <td>{employee.role}</td>
             <td>{employee.address}</td>
             <td>{employee.email}</td>
             <td>{employee.phone}</td>
-            <td style={{ textAlign: "center" }}>
-              {employee.employment_status}
-            </td>
+            <td className="employee__status">{employee.employment_status}</td>
+
             <td>
-              <Link to={`/edit/${employee.id}`}>Edit</Link>
+              {/* <Link
+                to={`/edit`}
+                className="add__button"
+                style={{ backgroundColor: "#7F56D9", border: "none" }}
+                state={{
+                  status: employee.employment_status,
+                  userId: employee.id,
+                }}
+              >
+                Edit
+              </Link> */}
+              <Link
+                to={`/edit/${employee.id}`}
+                className="add__button"
+                style={{ backgroundColor: "#7F56D9", border: "none" }}
+                state={{ status: employee.employment_status }}
+              >
+                Edit
+              </Link>
             </td>
           </tr>
         );

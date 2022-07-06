@@ -24,10 +24,10 @@
 }
 
 .add__button {
-  background-color: purple;
+  background-color: #34D07F;
   color: white;
   text-decoration: none;
-  padding: 15px;
+  padding: 8px;
   border-radius: 8px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
@@ -37,41 +37,64 @@
   color: #FFFFFF;
 }
 
+.header > h1 {
+  font-family: 'Inter', sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 24.2011px;
+line-height: 31px;
+color: #101828;
+}
+
 #employee {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
-    border-radius: 8px;
-    margin-top: 20px;
+    margin-top: 50px;
+    border: none;
   }
 
-  td {
-    border: 1px solid #ddd;
-    padding: 8px;
+  td,th {
+    padding: 4px;
     
   }
 
-  th {
-    border: 1px solid #ddd;
-    padding: 8px;
-    
+  .list{
+    height: 59px;
+    background: #FFFFFF;
   }
 
-  #employee tr:nth-child(even) {
-    background-color: #f2f2f2;
-    /* border-radius: 8px; */
+  .list > td {
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13.8631px;
+    line-height: 19px;
+    color: #020202;
   }
 
-  tr:hover {
-    background-color: #ddd;
+  .list:hover {
     transform: scale(1.015);
-    border-radius: 8px;
+    transition: transform 0.3s;
+    box-shadow: 1.01501px 17.2552px 44.6606px rgba(3, 2, 41, 0.07);
+    border-radius: 10.1501px;
+    border-bottom: 1px solid #f2f2f2;
   }
 
   #employee th {
-    padding: 10px;
+    padding: 8px;
     text-align: left;
-    color: black;
-    border: 1px solid #f2f2f2;
-    
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.4715px;
+    line-height: 17px;
+    color: #030229;
+  }
+
+
+  .employee__status {
+    color: #34D07F;
+    opacity: 1;
+    text-align: center;
   }

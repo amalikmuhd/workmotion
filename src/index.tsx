@@ -10,7 +10,8 @@ const root = ReactDOM.createRoot(
 root.render(
   <Router>
     <Routes>
-      <Route path="/edit/:id" element={<EditEmployee />} />
+      <Route path="/edit/:id/*" element={<EditEmployee />} />
+      {/* <Route path="/edit" element={<EditEmployee />} /> */}
       <Route path="/addEmployee" element={<AddEmployee />} />
       <Route path="/" element={<EmployeeList />} />
     </Routes>

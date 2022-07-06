@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./signup.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function AddEmployee() {
@@ -10,6 +10,8 @@ export default function AddEmployee() {
   const [address, setAddress] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+
+  const navigate = useNavigate();
 
   useEffect(() => {}, [name, role, address, email, phone]);
 
@@ -28,7 +30,13 @@ export default function AddEmployee() {
         "Context-Type": "application/json",
       },
     };
-    axios.post(api, body, config);
+
+    try {
+      const response = await axios.post(api, body, config);
+      if (response.status === 200) return navigate("/");
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (

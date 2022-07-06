@@ -16,10 +16,14 @@
 .active {
     width: 100px;
     padding: 20px;
-    color: purple;
+    color: black;
     text-align: center;
     text-decoration: none;
-    background-color: pink;
+    background-color: white;
+}
+.active:hover {
+    color: white;
+    background-color: purple;
 }
 
 .inactive {
@@ -30,3 +34,19 @@
     text-decoration: none;
     background-color: white;
 }
+
+.user__display {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.col-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+

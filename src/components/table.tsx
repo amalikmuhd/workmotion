@@ -32,8 +32,12 @@ export default function Table() {
           <>
             <div className="header">
               <h1>Workmotion Employees</h1>
-              <Link to="/addEmployee" className="add__button">
-                Add Employee
+              <Link
+                to="/addEmployee"
+                className="add__button"
+                style={{ color: "black" }}
+              >
+                Add User
               </Link>
             </div>
 
@@ -41,12 +45,12 @@ export default function Table() {
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Name</th>
-                  <th>Role</th>
-                  <th>Address</th>
-                  <th>email</th>
-                  <th>phone</th>
-                  <th>employment_status</th>
+                  <th>NAME</th>
+                  <th>ROLE</th>
+                  <th>ADDRESS</th>
+                  <th>EMAIL</th>
+                  <th>PHONE</th>
+                  <th>EMPLOYEE STATUS</th>
                   <th></th>
                 </tr>
               </thead>
