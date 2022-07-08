@@ -26,7 +26,6 @@ export default function List(props: EmployeesList) {
             <td>{employee.email}</td>
             <td>{employee.phone}</td>
             <td className="employee__status">{employee.employment_status}</td>
-
             <td>
               <Link
                 // to={`/edit/${employee.id}/${employee.employment_status}`}

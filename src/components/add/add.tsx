@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./add.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import employees from "../../api/employees";
+import Modal from "../modal/modal";
 
 export default function Add() {
+  const [formState, setFormState] = useState(false);
   const [name, setName] = useState("");
   const [role, setRole] = useState("");
   const [address, setAddress] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-
-  const navigate = useNavigate();
 
   useEffect(() => {}, [name, role, address, email, phone]);
 
@@ -24,6 +24,7 @@ export default function Add() {
       phone: phone,
       employment_status: "Added",
     };
+
     const config = {
       headers: {
         "Context-Type": "application/json",
@@ -31,19 +32,24 @@ export default function Add() {
     };
 
     try {
-      const response = await employees.post("/employees", body, config);
-      if (response.status === 200) return navigate("/");
+      const response = await employees.post("/employee", body, config);
+      if (response.status !== 200) {
+        setFormState(true);
+      }
     } catch (e) {
-      console.log(e);
+      console.log("Adding api error");
     }
   };
 
   return (
     <div className="container__signup">
+      {formState === true && <Modal />}
+      <Link to="/" className="">
+        Go Back
+      </Link>
       <div className="inner__container">
         <header className="header__signup">
-          {/* <img src={Logo} alt="logo" /> */}
-          <p className="header__title">Add a team</p>
+          <p className="header__title">Add a Employee</p>
           <p className="description">welcome to motion</p>
         </header>
         <form onSubmit={handleForm}>
@@ -98,9 +104,7 @@ export default function Add() {
               required
             />
           </div>
-          <Link to="/" className="button__signup">
-            View Employees
-          </Link>
+
           <input
             type="submit"
             value="Add Employee"

@@ -1,24 +1,21 @@
 import "./table.css";
-
 import { useState, useEffect } from "react";
-
 import List from "./list";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import api from "../../api/employees";
 
 export default function Table() {
   const [mockData, setMockData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const api = "https://62c0eed7eff7f7856f071380.mockapi.io/employee";
 
   useEffect(() => {
     const fetchEmployee = async () => {
       try {
-        const response = await axios.get(api);
+        const response = await api.get("employee");
         if (response && response.data) setMockData(response.data);
         setLoading(true);
       } catch (err) {
-        console.log("There is a proble with the api");
+        console.log("There is a problem with the api");
       }
     };
 

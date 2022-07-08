@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+
+.modalBackground {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    bottom: 0%;
+    width: 100%;
+    background: rgba(52, 64, 84, 0.1);
+    backdrop-filter: blur(16px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalContainer {
+    width: 350px;
+    height: auto;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+  }
+  
+  .modalContainer .title {
+    display: inline-block;
+    text-align: left;
+  }
+  
+
+  .modalContainer .footer {
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalContainer .footer .closeButton {
+    width: 100%;
+    padding: 0.5rem 0;
+    margin: 10px 0px;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid #d0d5dd;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+  }
+  
+  .share {
+    border: none;
+    background-color: transparent;
+    margin-right: 1rem;
+  }
+  
+  .shareIcon {
+    width: 17.21px;
+    height: 17.23px;
+    color: black;
+  }
+  
+  #cancelBtn {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #344054;
+    background: #ffffff;
+    color: #344054;
+  }

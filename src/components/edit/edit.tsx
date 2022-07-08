@@ -25,15 +25,15 @@ export default function Edit() {
     setActiveTab("In-check");
   };
   const handleTab3 = () => {
-    // update the state to tab2
+    // update the state to tab3
     setActiveTab("Approved");
   };
   const handleTab4 = () => {
-    // update the state to tab2
+    // update the state to tab4
     setActiveTab("Active");
   };
   const handleTab5 = () => {
-    // update the state to tab2
+    // update the state to tab5
     setActiveTab("Inactive");
   };
 
