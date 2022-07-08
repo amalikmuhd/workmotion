@@ -49,7 +49,7 @@ export default function Add() {
       </Link>
       <div className="inner__container">
         <header className="header__signup">
-          <p className="header__title">Add a Employee</p>
+          <p className="header__title">Add an Employee</p>
           <p className="description">welcome to motion</p>
         </header>
         <form onSubmit={handleForm}>
