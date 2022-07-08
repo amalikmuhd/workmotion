@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "./signup.css";
+import "./add.css";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import employees from "../../api/employees";
 
 export default function Add() {
-  const api = "https://62c0eed7eff7f7856f071380.mockapi.io/employee";
   const [name, setName] = useState("");
   const [role, setRole] = useState("");
   const [address, setAddress] = useState("");
@@ -32,7 +31,7 @@ export default function Add() {
     };
 
     try {
-      const response = await axios.post(api, body, config);
+      const response = await employees.post("/employees", body, config);
       if (response.status === 200) return navigate("/");
     } catch (e) {
       console.log(e);

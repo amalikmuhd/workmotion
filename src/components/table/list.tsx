@@ -29,10 +29,12 @@ export default function List(props: EmployeesList) {
 
             <td>
               <Link
-                to={`/edit/${employee.id}/${employee.employment_status}`}
+                // to={`/edit/${employee.id}/${employee.employment_status}`}
+                to={`/edit`}
                 className="add__button"
                 style={{ backgroundColor: "#7F56D9", border: "none" }}
                 state={{
+                  id: employee.id,
                   status: employee.employment_status,
                 }}
               >

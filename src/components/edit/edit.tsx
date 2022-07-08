@@ -1,7 +1,7 @@
-import { useLocation, Link, useParams } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import "./edit.css";
-import axios from "axios";
 import { useState } from "react";
+import api from "../../api/employees";
 
 type userState = {
   status: string;
@@ -11,7 +11,8 @@ type userState = {
 export default function Edit() {
   const location = useLocation();
   const user: userState = location.state as userState;
-  const { id, status } = useParams();
+  const { id, status } = user;
+
   const [activeTab, setActiveTab] = useState(status);
 
   const handleTab1 = () => {
@@ -36,16 +37,14 @@ export default function Edit() {
     setActiveTab("Inactive");
   };
 
-  const api = `https://62c0eed7eff7f7856f071380.mockapi.io/employee/${id}`;
-
   return (
     <>
       <div className="tabContainer">
         <div
           className={activeTab === "Added" ? "added" : "inactivebox"}
           onClick={() => {
-            axios
-              .put(api, {
+            api
+              .put(`employee/${id}`, {
                 id: id,
                 employment_status: "Added",
               })
@@ -59,8 +58,8 @@ export default function Edit() {
         <div
           className={activeTab === "In-check" ? "incheck" : "inactivebox"}
           onClick={() => {
-            axios
-              .put(api, {
+            api
+              .put(`employee/${id}`, {
                 id: id,
                 employment_status: "In-check",
               })
@@ -73,8 +72,8 @@ export default function Edit() {
         <div
           className={activeTab === "Approved" ? "approved" : "inactivebox"}
           onClick={() => {
-            axios
-              .put(api, {
+            api
+              .put(`employee/${id}`, {
                 id: id,
                 employment_status: "Approved",
               })
@@ -87,8 +86,8 @@ export default function Edit() {
         <div
           className={activeTab === "Active" ? "active" : "inactivebox"}
           onClick={() => {
-            axios
-              .put(api, {
+            api
+              .put(`employee/${id}`, {
                 id: id,
                 employment_status: "Active",
               })
@@ -101,8 +100,8 @@ export default function Edit() {
         <div
           className={activeTab === "Inactive" ? "inactive" : "inactivebox"}
           onClick={() => {
-            axios
-              .put(api, {
+            api
+              .put(`employee/${id}`, {
                 id: id,
                 employment_status: "Inactive",
               })
