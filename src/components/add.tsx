@@ -3,7 +3,7 @@ import "./signup.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-export default function AddEmployee() {
+export default function Add() {
   const api = "https://62c0eed7eff7f7856f071380.mockapi.io/employee";
   const [name, setName] = useState("");
   const [role, setRole] = useState("");
@@ -55,6 +55,7 @@ export default function AddEmployee() {
               placeholder="Enter name"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              required
             />
           </div>
 
@@ -65,6 +66,7 @@ export default function AddEmployee() {
               placeholder="Enter Role"
               value={role}
               onChange={(e) => setRole(e.target.value)}
+              required
             />
           </div>
           <div className="user__input">
@@ -74,6 +76,7 @@ export default function AddEmployee() {
               placeholder="Enter Address"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
+              required
             />
           </div>
           <div className="user__input">
@@ -83,6 +86,7 @@ export default function AddEmployee() {
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
           <div className="user__input">
@@ -92,6 +96,7 @@ export default function AddEmployee() {
               placeholder="Enter your email"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
+              required
             />
           </div>
           <Link to="/" className="button__signup">

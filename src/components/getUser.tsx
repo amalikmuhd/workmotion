@@ -1,5 +1,4 @@
 import "./table.css";
-import { Link } from "react-router-dom";
 
 interface IProps {
   id: string;
@@ -31,30 +30,8 @@ export const GetUser: React.FC<IProps> = ({
         <td>{email}</td>
         <td>{phone}</td>
         <td className="employee__status">{employment_status}</td>
-
-        {/* <td>
-          <Link
-            to={`/edit/${employee.id}`}
-            className="add__button"
-            style={{ backgroundColor: "#7F56D9", border: "none" }}
-          >
-            Edit
-          </Link>
-        </td> */}
       </tr>
       );
     </>
   );
 };
-
-// interface IProps {
-//   text: string;
-// }
-
-// export const Status: React.FC<IProps> = ({ text }) => {
-//   return (
-//     <div className="status">
-//       <span className="status-text">{text}</span>
-//     </div>
-//   );
-// };

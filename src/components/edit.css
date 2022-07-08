@@ -1,0 +1,85 @@
+.tabContainer {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.tabMenu {
+    width: 100px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.added{
+    width: 100px;
+    padding: 20px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    background-color: #6E85B7;
+    cursor: pointer;
+}
+.incheck{
+    width: 100px;
+    padding: 20px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    background-color: #DEAD39;
+    cursor: pointer;
+}
+.approved{
+    width: 100px;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    background-color: #329C8B;
+    cursor: pointer;
+}
+.active{
+    width: 100px;
+    padding: 20px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    background-color: #3EC70B;
+    cursor: pointer;
+}
+.inactive{
+    width: 100px;
+    padding: 20px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    background-color: #CFD2CF;
+    cursor: pointer;
+}
+
+.inactivebox {
+    width: 100px;
+    padding: 20px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.user__display {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.col-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+

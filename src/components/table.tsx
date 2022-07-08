@@ -33,7 +33,7 @@ export default function Table() {
             <div className="header">
               <h1>Workmotion Employees</h1>
               <Link
-                to="/addEmployee"
+                to="/add"
                 className="add__button"
                 style={{ color: "black" }}
               >
