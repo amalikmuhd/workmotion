@@ -8,7 +8,6 @@ const root = ReactDOM.createRoot(
 root.render(
   <Router>
     <Routes>
-      {/* <Route path="/edit/:id/:status" element={<Edit />} /> */}
       <Route path="/edit" element={<Edit />} />
       <Route path="/add" element={<Add />} />
       <Route path="/" element={<UiList />} />

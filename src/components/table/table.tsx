@@ -1,64 +1,44 @@
 import "./table.css";
 import { useState, useEffect } from "react";
-import List from "./list";
-import { Link } from "react-router-dom";
+import EmployeeList from "./employeeList";
 import api from "../../api/employees";
+import { Header } from "./header";
 
 export default function Table() {
-  const [mockData, setMockData] = useState([]);
+  const [employee, setEmployee] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  //RetrieveEmployees
+  const retrieveEmployees = async () => {
+    try {
+      const response = await api.get("/employee");
+      setLoading(true);
+      return response.data;
+    } catch (e) {
+      console.log("Proble fetching the API");
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    const fetchEmployee = async () => {
-      try {
-        const response = await api.get("employee");
-        if (response && response.data) setMockData(response.data);
-        setLoading(true);
-      } catch (err) {
-        console.log("There is a problem with the api");
-      }
+    const getAllEmployees = async () => {
+      const allEmployees = await retrieveEmployees();
+      if (allEmployees) setEmployee(allEmployees);
     };
 
-    fetchEmployee();
-  });
+    getAllEmployees();
+  }, []);
 
   return (
     <div className="container">
       <div className="inner__container">
         {loading === true ? (
           <>
-            <div className="header">
-              <h1>Workmotion Employees</h1>
-              <Link
-                to="/add"
-                className="add__button"
-                style={{ color: "black" }}
-              >
-                Add User
-              </Link>
-            </div>
-
-            <table id="employee">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>NAME</th>
-                  <th>ROLE</th>
-                  <th>ADDRESS</th>
-                  <th>EMAIL</th>
-                  <th>PHONE</th>
-                  <th>STATUS</th>
-                  <th></th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <List names={mockData} />
-              </tbody>
-            </table>
+            {Header()}
+            <EmployeeList employee={employee} />
           </>
         ) : (
-          <p>Loading Data</p>
+          <p>Loading Data...</p>
         )}
       </div>
     </div>
