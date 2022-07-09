@@ -1,4 +1,4 @@
 import UiList from "./table/table";
-import Edit from "./edit/edit";
+import Update from "./update/update";
 import Add from "./add/add";
-export { UiList, Edit, Add };
+export { UiList, Update, Add };

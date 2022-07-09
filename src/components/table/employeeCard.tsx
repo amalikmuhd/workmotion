@@ -28,7 +28,7 @@ export default function EmployeeCard(props: EmployeesList) {
         <td className="employee__status">{employment_status}</td>
         <td>
           <Link
-            to={`/edit`}
+            to="/update"
             className="add__button"
             style={{ backgroundColor: "#7F56D9", border: "none" }}
             state={{
