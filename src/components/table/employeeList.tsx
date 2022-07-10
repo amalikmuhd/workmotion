@@ -1,19 +1,8 @@
 import "./table.css";
 import EmployeeCard from "./employeeCard";
+import EmployeesType from "../../interface/EmployeesType";
 
-type EmployeesList = {
-  employee: {
-    id: string;
-    name: string;
-    role: string;
-    address: string;
-    email: string;
-    phone: string;
-    employment_status: string;
-  }[];
-};
-
-export default function EmployeeList(props: EmployeesList) {
+export default function EmployeeList(props: EmployeesType) {
   const renderEmployeeList = props.employee.map((employee) => {
     return <EmployeeCard employee={employee} key={employee.id} />;
   });

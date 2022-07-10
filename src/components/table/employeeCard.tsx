@@ -1,6 +1,5 @@
 import "./table.css";
 import { Link } from "react-router-dom";
-
 type EmployeesList = {
   employee: {
     id: string;

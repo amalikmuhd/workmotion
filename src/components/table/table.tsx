@@ -15,7 +15,7 @@ export default function Table() {
       setLoading(true);
       return response.data;
     } catch (e) {
-      console.log("Proble fetching the API");
+      console.log("Problem fetching mockAPI");
       setLoading(false);
     }
   };
