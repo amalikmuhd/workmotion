@@ -27,7 +27,7 @@ export default function Table() {
     };
 
     getAllEmployees();
-  }, []);
+  });
 
   return (
     <div className="container">

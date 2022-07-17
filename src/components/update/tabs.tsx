@@ -1,13 +1,9 @@
 import "./update.css";
 import { useState } from "react";
 import api from "../../api/employees";
+import { UserState } from "../../interface/UserState";
 
-type userState = {
-  status: string;
-  id: string;
-};
-
-export default function Tabs({ id, status }: userState) {
+export default function Tabs({ id, status }: UserState) {
   const [activeTab, setActiveTab] = useState(status);
 
   const handleTab1 = () => {
@@ -31,17 +27,26 @@ export default function Tabs({ id, status }: userState) {
     // update the state to tab5
     setActiveTab("Inactive");
   };
+
+  const updateEmployee = (addStatus: string) => {
+    try {
+      api
+        .put(`employee/${id}`, {
+          id: id,
+          employment_status: addStatus,
+        })
+        .catch((err) => console.log(err));
+    } catch (e) {
+      console.log("Error adding employee");
+    }
+  };
+
   return (
     <div className="tabContainer">
       <div
         className={activeTab === "Added" ? "added" : "inactivebox"}
         onClick={() => {
-          api
-            .put(`employee/${id}`, {
-              id: id,
-              employment_status: "Added",
-            })
-            .catch((err) => console.log(err));
+          updateEmployee("Added");
           handleTab1();
         }}
       >
@@ -51,12 +56,7 @@ export default function Tabs({ id, status }: userState) {
       <div
         className={activeTab === "In-check" ? "incheck" : "inactivebox"}
         onClick={() => {
-          api
-            .put(`employee/${id}`, {
-              id: id,
-              employment_status: "In-check",
-            })
-            .catch((err) => console.log(err));
+          updateEmployee("In-check");
           handleTab2();
         }}
       >
@@ -65,12 +65,7 @@ export default function Tabs({ id, status }: userState) {
       <div
         className={activeTab === "Approved" ? "approved" : "inactivebox"}
         onClick={() => {
-          api
-            .put(`employee/${id}`, {
-              id: id,
-              employment_status: "Approved",
-            })
-            .catch((err) => console.log(err));
+          updateEmployee("Approved");
           handleTab3();
         }}
       >
@@ -79,12 +74,7 @@ export default function Tabs({ id, status }: userState) {
       <div
         className={activeTab === "Active" ? "active" : "inactivebox"}
         onClick={() => {
-          api
-            .put(`employee/${id}`, {
-              id: id,
-              employment_status: "Active",
-            })
-            .catch((err) => console.log(err));
+          updateEmployee("Active");
           handleTab4();
         }}
       >
@@ -93,12 +83,7 @@ export default function Tabs({ id, status }: userState) {
       <div
         className={activeTab === "Inactive" ? "inactive" : "inactivebox"}
         onClick={() => {
-          api
-            .put(`employee/${id}`, {
-              id: id,
-              employment_status: "Inactive",
-            })
-            .catch((err) => console.log(err));
+          updateEmployee("Inactive");
           handleTab5();
         }}
       >
